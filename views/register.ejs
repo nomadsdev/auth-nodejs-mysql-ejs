@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Thai:wght@500&display=swap" rel="stylesheet">
+    <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+    <style>
+        *{
+            font-family: "Noto Sans Thai", sans-serif;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="flex justify-center px-5 pt-20">
+        <div class="w-full max-w-2xl">
+            <div class="w-full p-5 rounded-md shadow">
+                <h1 class="text-center text-indigo-500 text-xl">Register</h1>
+                <% if (typeof error !== 'undefined') { %>
+                    <div class="w-full text-red-500 bg-red-200 rounded-md py-1 my-3 flex gap-2 justify-center">
+                        <p><%= error %></p>
+                    </div>
+                <% } %>
+                <form action="/register" method="POST">
+                    <div>
+                        <label for="username">Username</label>
+                        <br>
+                        <input type="text" id="username" name="username" required class="border px-5 py-0.5 rounded-md w-full">
+                    </div>
+                    <div>
+                        <label for="email">Email:</label>
+                        <br>
+                        <input type="email" id="email" name="email" required class="border px-5 py-0.5 rounded-md w-full">
+                    </div>
+                    <div>
+                        <label for="password">Password</label>
+                        <br>
+                        <input type="password" id="password" name="password" required class="border px-5 py-0.5 rounded-md w-full">
+                    </div>
+                    <div class="flex justify-center pt-4">
+                        <button type="submit" class="w-full rounded-md border border-indigo-500 text-indigo-500 py-1 hover:bg-indigo-500 hover:text-white transition">Register</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <div class="text-xs flex justify-center py-5">
+        <p>มีบัญชีแล้ว <a href="/login" class="text-indigo-500">เข้าสู่ระบบ</a></p>
+    </div>
+    
+</body>
+</html>
